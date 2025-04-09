@@ -13,6 +13,28 @@
             # print "Invalid value entered. Enter only {choice[0]} or {choice[1]}."
             # continue
 
+# define get_integer_input(prompt, limit=None)
+    # loop inifinitely
+        # try
+            # get user_input with input(prompt).lower()
+
+            # check if limit is None and user_input == "n"
+                # return False
+            # else if limit is None and user_input != "n" and user_input is not numerical
+                # raise Exception
+
+            # convert user_input to integer
+            # check if user_input < 1
+                # raise Exception
+            # else if limit is not None and user_input > limit
+                # raise Exception
+            # return user_input
+        # except
+            # print "Invalid value entered. Enter only integer from 1 to {limit}."
+            # check if limit is None
+                # print in the same line "Or enter N/n to remove timer."
+            # continue
+
 # ask user the topic of quiz
 
 # set a dictionary named settings as...
