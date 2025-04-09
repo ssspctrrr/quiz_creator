@@ -1,3 +1,18 @@
+# define get_specific_input(prompt, possible_values=["y", "n"])
+    # loop infinitely
+        #try
+            # get user_input with input(prompt, possible_values).lower()
+            # check if user_input not in possible_values
+                # raise Exception
+
+            # check if user_input == possible_values[0]
+                # return True
+            # check if user_input == possible_values[1]
+                # return False
+        # except
+            # print "Invalid value entered. Enter only {choice[0]} or {choice[1]}."
+            # continue
+
 # ask user the topic of quiz
 
 # set a dictionary named settings as...
