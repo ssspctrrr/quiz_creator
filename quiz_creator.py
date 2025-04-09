@@ -35,6 +35,32 @@
                 # print in the same line "Or enter N/n to remove timer."
             # continue
 
+# define write_question(file) function
+    # write to file "==============================\n"
+
+    # get question
+    # write to file "{question}\n"
+
+    # assign letter_choices as A,B,C,D
+    # shuffle letter_choices
+
+    # define choices as empty dictionary
+
+    # get correct_answer
+    # assign the value correct_answer to key of first shuffled letter_choices
+
+    # iterate three times
+        # get a possible_choice
+        # assign value possible_choice to key of current letter_choices
+
+    # iterate over sorted choices dictionary
+        # check if the current possible_choice is the correct_answer
+            # write to file the sign of correct_answer ">>>" + current letter_choice + value of possible_choice + "\n"
+        # else
+            # write to file the current letter_choice + value of possible_choice + "\n"
+
+    # write to file "==============================\n"
+
 # ask user the topic of quiz
 
 # set a dictionary named settings as...
