@@ -2,12 +2,14 @@
     # loop infinitely
         #try
             # get user_input with input(prompt, possible_values).lower()
+
             # check if user_input not in possible_values
                 # raise Exception
-
-            # check if user_input == possible_values[0]
+            # else if possible_values != ["y", "n"]
+                # return user_input
+            # else if user_input == possible_values[0]
                 # return True
-            # check if user_input == possible_values[1]
+            # else if user_input == possible_values[1]
                 # return False
         # except
             # print "Invalid value entered. Enter only {choice[0]} or {choice[1]}."
@@ -64,7 +66,7 @@
 # ask user the topic of quiz
 
 # set a dictionary named settings as...
-    # ask_settings_in_quiz: True
+    # enable_change_settings: True
     # timer: False
     # tries: 1
     # show_correct_answer_each_question: True
@@ -75,14 +77,13 @@
 # loop infinitely
     # print settings of the quiz
 
-    # get_specific_input("if user wants to change and which setting to change", ["1", "2", "3", "4", "5", "6", "7", "q"])
+    # get_specific_input("if user wants ", ["1", "2", "3", "4", "5", "6", "7", "q"])
         # check if setting_input == "q"
             # print "you will now enter the questions.\n"
             # break
-
-        # check if change_setting == "1"
-            # get setting_input from get_specific_input("Enter y if user wants to ask settings in quiz program. Enter n if not")
-            # assign settings[ask_settings_in_quiz] = settings_input
+        # else if change_setting == "1"
+            # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
+            # assign settings[enable_change_settings] == setting_input
         # else if change_setting == "2"
             # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
             # assign settings[timer] = settings_input
