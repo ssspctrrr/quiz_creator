@@ -118,33 +118,31 @@ Q/q: Quit Adjusting the settings and finalize the current settings.
 7: Adjust "show_score_end" which adjusts whether the score is shown at the end
 Input: 
 """
-    settings_input = get_specific_input(settings_prompt)
-    print("FUNCTION RETURNED:", settings_input)
-    break
-        # check if setting_input == "q"
-            # print "you will now enter the questions.\n"
-            # break
-        # else if change_setting == "1"
-            # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
-            # assign settings[enable_change_settings] == setting_input
-        # else if change_setting == "2"
-            # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
-            # assign settings[timer] = settings_input
-        # else if change_setting == "3"
-            # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
-            # assign settings[tries] = settings_input
-        # else if change_setting == "4"
-            # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
-            # assign settings[show_correct_answer_each_question] = settings_input
-        # else if change_setting == "5"
-            # get setting_input from get_specific_input("Enter y if user wants to show all correct answer at the end of quiz")
-            # assign settings[show_correct_answer_at_end] = setting_input
-        # else if change_setting == "6"
-            # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
-            # assign settings[show_score_every_question] = setting_input
-        # else
-            # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
-            # assign settings[show_score_end] = setting_input
+    change_settings = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
+    # check if change_settings == "q"
+        # print "you will now enter the questions.\n"
+        # break
+    # else if change_setting == "1"
+        # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
+        # assign settings[enable_change_settings] == setting_input
+    # else if change_setting == "2"
+        # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
+        # assign settings[timer] = settings_input
+    # else if change_setting == "3"
+        # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
+        # assign settings[tries] = settings_input
+    # else if change_setting == "4"
+        # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
+        # assign settings[show_correct_answer_each_question] = settings_input
+    # else if change_setting == "5"
+        # get setting_input from get_specific_input("Enter y if user wants to show all correct answer at the end of quiz")
+        # assign settings[show_correct_answer_at_end] = setting_input
+    # else if change_setting == "6"
+        # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
+        # assign settings[show_score_every_question] = setting_input
+    # else
+        # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
+        # assign settings[show_score_end] = setting_input
 
     # print "The settings are now changed into the following:"
     print("The settings are now changed into the following:")
