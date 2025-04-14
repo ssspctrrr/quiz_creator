@@ -64,6 +64,7 @@
     # write to file "==============================\n"
 
 # ask user the topic of quiz
+topic = input("Enter the topic of this quizbelow by finishing the sentence.\nThis is a quiz about ")
 
 # set a dictionary named settings as...
     # enable_change_settings: True
