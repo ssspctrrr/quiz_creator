@@ -122,8 +122,9 @@ Input:
     # check if change_settings == "q"
     if change_settings == "q":
         # print "you will now enter the questions.\n"
-        print("break loop here")
+        print("\nSettings saved. You will now enter the quiz questions.\n")
         # break
+        break
     # else if change_setting == "1"
     elif change_settings == "1":
         # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
