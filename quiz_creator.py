@@ -19,7 +19,9 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
                 # return True
                 return True
             # else if user_input == possible_values[1]
+            elif user_input == possible_values[1]:
                 # return False
+                return False
         # except
         except:
             # print "Invalid value entered. Enter only {possible_values}."
