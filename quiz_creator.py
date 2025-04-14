@@ -120,28 +120,44 @@ Input:
 """
     change_settings = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
     # check if change_settings == "q"
+    if change_settings == "q":
         # print "you will now enter the questions.\n"
+        print("break loop here")
         # break
     # else if change_setting == "1"
+    elif change_settings == "1":
         # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
+        print("enable settings change")
         # assign settings[enable_change_settings] == setting_input
     # else if change_setting == "2"
+    elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
+        print("timer")
         # assign settings[timer] = settings_input
     # else if change_setting == "3"
+    elif change_settings == "3":
         # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
+        print("tries")
         # assign settings[tries] = settings_input
     # else if change_setting == "4"
+    elif change_settings == "4":
         # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
+        print("show correct answer each question")
         # assign settings[show_correct_answer_each_question] = settings_input
     # else if change_setting == "5"
+    elif change_settings == "5":
         # get setting_input from get_specific_input("Enter y if user wants to show all correct answer at the end of quiz")
+        print("show all correct answer at end")
         # assign settings[show_correct_answer_at_end] = setting_input
     # else if change_setting == "6"
+    elif change_settings == "6":
         # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
+        print("show score every question")
         # assign settings[show_score_every_question] = setting_input
     # else
+    else:
         # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
+        print("show score at end")
         # assign settings[show_score_end] = setting_input
 
     # print "The settings are now changed into the following:"
