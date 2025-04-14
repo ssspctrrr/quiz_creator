@@ -15,7 +15,9 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
                 # return user_input
                 return user_input
             # else if user_input == possible_values[0]
+            elif user_input == possible_values[0]:
                 # return True
+                return True
             # else if user_input == possible_values[1]
                 # return False
         # except
@@ -114,8 +116,8 @@ Q/q: Quit Adjusting the settings and finalize the current settings.
 7: Adjust "show_score_end" which adjusts whether the score is shown at the end
 Input: 
 """
-    settings_input = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
-    print("FUNCTION RETURNED: " + settings_input)
+    settings_input = get_specific_input(settings_prompt)
+    print("FUNCTION RETURNED:", settings_input)
     break
         # check if setting_input == "q"
             # print "you will now enter the questions.\n"
