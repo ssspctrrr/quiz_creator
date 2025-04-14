@@ -18,9 +18,8 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
                 # return False
         # except
         except:
-            pass
-            # print "Invalid value entered. Enter only {choice[0]} or {choice[1]}."
-            # continue
+            # print "Invalid value entered. Enter only {possible_values}."
+            print(f"\nInvalid value entered. Enter only {possible_values}")
 
 # define get_integer_input(prompt, limit=None)
     # loop inifinitely
