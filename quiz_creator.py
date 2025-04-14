@@ -98,7 +98,7 @@ while True:
     for setting in settings:
         print(f"{setting}: {settings[setting]}")
 
-    print("\n")
+    print("")
     # get_specific_input("if user wants ", ["1", "2", "3", "4", "5", "6", "7", "q"])
     settings_prompt = """\
 Enter...
@@ -112,7 +112,8 @@ Q/q: Quit Adjusting the settings and finalize the current settings.
 7: Adjust "show_score_end" which adjusts whether the score is shown at the end
 Input: 
 """
-    settings_input = get_specific_input(settings_prompt)
+    settings_input = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
+    print(settings_input)
         # check if setting_input == "q"
             # print "you will now enter the questions.\n"
             # break
