@@ -1,4 +1,6 @@
 # define get_specific_input(prompt, possible_values=["y", "n"])
+def get_specific_input(prompt, possible_values=["y", "n"]):
+    print(f"{prompt}, {possible_values}")
     # loop infinitely
         #try
             # get user_input with input(prompt, possible_values).lower()
@@ -93,6 +95,7 @@ while True:
         print(f"{setting}: {settings[setting]}")
 
     # get_specific_input("if user wants ", ["1", "2", "3", "4", "5", "6", "7", "q"])
+    get_specific_input("enter y or n")
         # check if setting_input == "q"
             # print "you will now enter the questions.\n"
             # break
