@@ -67,13 +67,24 @@
 topic = input("Enter the topic of this quizbelow by finishing the sentence.\nThis is a quiz about ")
 
 # set a dictionary named settings as...
+settings = {
     # enable_change_settings: True
+    "enable_change_settings": True,
     # timer: False
+    "timer": False,
     # tries: 1
+    "tries": 1,
     # show_correct_answer_each_question: True
+    "show_correct_answer_each_question": True,
     # show_correct_answer_at_end: False
+    "show_correct_answer at end": False,
     # show_score_every_question: False
+    "show_score_every_question": False,
     # show_score_end: True
+    "show_score_end": True
+}
+
+print(settings)
 
 # loop infinitely
     # print settings of the quiz
