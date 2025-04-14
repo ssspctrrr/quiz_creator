@@ -7,7 +7,9 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
             user_input = input(prompt).lower()
 
             # check if user_input not in possible_values
+            if user_input not in possible_values:
                 # raise Exception
+                raise Exception
             # else if possible_values != ["y", "n"]
                 # return user_input
             # else if user_input == possible_values[0]
