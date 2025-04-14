@@ -1,9 +1,10 @@
 # define get_specific_input(prompt, possible_values=["y", "n"])
 def get_specific_input(prompt, possible_values=["y", "n"]):
-    print(prompt)
     # loop infinitely
-        #try
+    while True:
+        try:
             # get user_input with input(prompt, possible_values).lower()
+            user_input = input(prompt).lower()
 
             # check if user_input not in possible_values
                 # raise Exception
@@ -14,6 +15,8 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
             # else if user_input == possible_values[1]
                 # return False
         # except
+        except:
+            pass
             # print "Invalid value entered. Enter only {choice[0]} or {choice[1]}."
             # continue
 
