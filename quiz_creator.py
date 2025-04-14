@@ -84,10 +84,13 @@ settings = {
     "show_score_end": True
 }
 
-print(settings)
-
+# print "These are the default settings"
+print("The quiz will use these default settings:")
 # loop infinitely
+while True:
     # print settings of the quiz
+    for setting in settings:
+        print(f"{setting}: {settings[setting]}")
 
     # get_specific_input("if user wants ", ["1", "2", "3", "4", "5", "6", "7", "q"])
         # check if setting_input == "q"
@@ -114,6 +117,9 @@ print(settings)
         # else
             # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
             # assign settings[show_score_end] = setting_input
+
+    # print "The settings are now changed into the following:"
+    print("The settings are now changed into the following:")
     
 # open file "quiz_questions_configuration.txt" as file
     # write to file "A quiz on {topic}\n"
