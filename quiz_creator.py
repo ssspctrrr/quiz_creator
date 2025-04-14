@@ -1,6 +1,6 @@
 # define get_specific_input(prompt, possible_values=["y", "n"])
 def get_specific_input(prompt, possible_values=["y", "n"]):
-    print(f"{prompt}, {possible_values}")
+    print(prompt)
     # loop infinitely
         #try
             # get user_input with input(prompt, possible_values).lower()
@@ -79,7 +79,7 @@ settings = {
     # show_correct_answer_each_question: True
     "show_correct_answer_each_question": True,
     # show_correct_answer_at_end: False
-    "show_correct_answer at end": False,
+    "show_correct_answer_at_end": False,
     # show_score_every_question: False
     "show_score_every_question": False,
     # show_score_end: True
@@ -94,8 +94,21 @@ while True:
     for setting in settings:
         print(f"{setting}: {settings[setting]}")
 
+    print("\n")
     # get_specific_input("if user wants ", ["1", "2", "3", "4", "5", "6", "7", "q"])
-    get_specific_input("enter y or n")
+    settings_prompt = """\
+Enter...
+Q/q: Quit Adjusting the settings and finalize the current settings.
+1: Adjust enable_change_setting which adjusts whether the quiztaker can change the settings in the quiz program
+2: Disable timer or enable and input a timer (in seconds) for every question
+3: Enter how many tries the quiztaker has to get a correct answer per question
+4: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question
+5: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz
+6: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz
+7: Adjust "show_score_end" which adjusts whether the score is shown at the end
+Input: 
+"""
+    settings_input = get_specific_input(settings_prompt)
         # check if setting_input == "q"
             # print "you will now enter the questions.\n"
             # break
