@@ -215,7 +215,13 @@ Input: """
     # else
     else:
         # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
-        print("show score at end")
+        show_score_end_prompt = """
+You are now adjusting show_score_end. Enter...
+Y/y: Enable this setting so that the score is shown at the end of the quiz.
+N/n: Enable this setting so that the score is not shown at the end of the quiz.
+Input: """
+        setting_input = get_specific_input(show_score_end_prompt)
+        print(setting_input)
         # assign settings[show_score_end] = setting_input
 
     # print "The settings are now changed into the following:"
