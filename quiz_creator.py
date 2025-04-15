@@ -71,6 +71,8 @@ def get_integer_input(prompt, limit=None):
                 print(f"to {limit}.")
 
 # define write_question(file) function
+def write_question(file):
+    print("write question function called")
     # write to file "==============================\n"
 
     # get question
@@ -240,7 +242,8 @@ with open("quiz_questions_config.txt", "w") as file:
     file.write("START#########################\n")
 
     # loop infinitely
-        # write to file "{question}"
+        # use function write_question(file)
+    write_question(file)
         
         # get should_continue from get_specific_input("Enter c if program should continue. Enter q if not", ["c", "q"])
         # check if should_continue
