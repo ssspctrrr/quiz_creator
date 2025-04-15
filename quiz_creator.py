@@ -38,7 +38,9 @@ def get_integer_input(prompt, limit=None):
             print(user_input)
 
             # check if limit is None and user_input == "n"
+            if limit is None and user_input == "n":
                 # return False
+                return False
             # else if limit is None and user_input != "n" and user_input is not numerical
                 # raise Exception
 
@@ -147,6 +149,7 @@ Input: """
     elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
         setting_input = get_integer_input("testing to call this function")
+        print(setting_input)
         # assign settings[timer] = settings_input
     # else if change_setting == "3"
     elif change_settings == "3":
