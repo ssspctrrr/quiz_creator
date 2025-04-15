@@ -92,9 +92,6 @@ def write_question(file):
         # write choice to file
         file.write(f"{choice}\n")
 
-    # write to file "==============================\n"
-    file.write("==============================\n")
-
 # ask user the topic of quiz
 topic = input("Enter the topic of this quizbelow by finishing the sentence.\nThis is a quiz about ")
 
@@ -252,13 +249,12 @@ Input: """
         should_continue = get_specific_input(should_continue_prompt)
         # check if should_continue
         if should_continue:
-            pass
-            # write to file "CONTINUE======================\N"
             # print "You will now enter a new question and its choices.\n"
-            # continue
+            print("\nYou will now enter a new question and its choices.\n")
         # else
         else:
-            # write to file "END***************************\n"
+            # write to file "=============================="
+            # write to file "END***************************"
             # print "Quiz creator is now being terminated."
             # break
             break
