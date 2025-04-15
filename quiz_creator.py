@@ -188,8 +188,8 @@ Y/y: Enable this setting so that the correct answer is shown after each question
 N/n: Disable this so that the correct answer is not shown after each questions in the quiz.
 Input: """
         setting_input = get_specific_input(show_correct_answer_each_question_prompt)
-        print(setting_input)
         # assign settings[show_correct_answer_each_question] = settings_input
+        settings["show_correct_answer_each_question"] = setting_input
     # else if change_setting == "5"
     elif change_settings == "5":
         # get setting_input from get_specific_input("Enter y if user wants to show all correct answer at the end of quiz")
