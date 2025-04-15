@@ -42,7 +42,9 @@ def get_integer_input(prompt, limit=None):
                 # return False
                 return False
             # else if limit is None and user_input != "n" and user_input is not numerical
+            elif limit is None and not user_input.isnumeric():
                 # raise Exception
+                raise Exception
 
             # convert user_input to integer
             # check if user_input < 1
@@ -52,7 +54,7 @@ def get_integer_input(prompt, limit=None):
             # return user_input
         # except
         except:
-            pass
+            print("exception raised")
             # print "Invalid value entered. Enter only integer from 1 to {limit}."
             # check if limit is None
                 # print in the same line "Or enter N/n to remove timer."
