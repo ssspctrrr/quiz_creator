@@ -232,7 +232,9 @@ with open("quiz_questions_config.txt", "w") as file:
     file.write(f"A QUIZ ABOUT: {topic}\n")
 
     # iterate over keys of settings
+    for setting in settings:
         # write to file "{key} = {settings[key]}\n"
+        file.write(f"{setting} = {settings[setting]}\n")
 
     # write to file "START#########################\n"
 
