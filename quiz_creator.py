@@ -172,7 +172,12 @@ Input: """
     # else if change_setting == "3"
     elif change_settings == "3":
         # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
-        print("tries")
+        tries_prompt = """
+You are now adjusting the tries setting. Enter...
+Positive integer from 1 to 4: Allow quiztaker to have entered amount of times of tries while answer is wrong.
+Input: """
+        setting_input = get_integer_input(tries_prompt, 4)
+        print(setting_input)
         # assign settings[tries] = settings_input
     # else if change_setting == "4"
     elif change_settings == "4":
