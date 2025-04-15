@@ -239,10 +239,17 @@ with open("quiz_questions_config.txt", "w") as file:
     file.write("START#########################\n")
 
     # loop infinitely
+    while True:
         # use function write_question(file)
-    write_question(file)
+        write_question(file)
         
-        # get should_continue from get_specific_input("Enter c if program should continue. Enter q if not", ["c", "q"])
+        # get should_continue from get_specific_input("Enter y if program should continue. Enter n if not")
+        should_continue_prompt = """
+Continue entering questions? Enter...
+Y/y: Enter a new question
+N/n: End this program and finalize the entered questions & choices.
+Input: """
+        should_continue = get_specific_input(should_continue_prompt)
         # check if should_continue
             # write to file "CONTINUE======================\N"
             # print "You will now enter a new question and its choices.\n"
