@@ -182,7 +182,13 @@ Input: """
     # else if change_setting == "4"
     elif change_settings == "4":
         # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
-        print("show correct answer each question")
+        show_correct_answer_each_question_prompt = """
+You are now adjusting show_correct_answer_each_question_prompt. Enter...
+Y/y: Enable this setting so that the correct answer is shown after each questions in the quiz.
+N/n: Disable this so that the correct answer is not shown after each questions in the quiz.
+Input: """
+        setting_input = get_specific_input(show_correct_answer_each_question_prompt)
+        print(setting_input)
         # assign settings[show_correct_answer_each_question] = settings_input
     # else if change_setting == "5"
     elif change_settings == "5":
