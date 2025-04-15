@@ -72,8 +72,8 @@ def get_integer_input(prompt, limit=None):
 
 # define write_question(file) function
 def write_question(file):
-    print("write question function called")
     # write to file "==============================\n"
+    file.write("==============================\n")
 
     # get question
     # write to file "{question}\n"
@@ -86,6 +86,7 @@ def write_question(file):
         # write choice to file
 
     # write to file "==============================\n"
+    file.write("==============================\n")
 
 # ask user the topic of quiz
 topic = input("Enter the topic of this quizbelow by finishing the sentence.\nThis is a quiz about ")
