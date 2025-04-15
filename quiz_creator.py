@@ -160,7 +160,12 @@ Input: """
     # else if change_setting == "2"
     elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
-        setting_input = get_integer_input("\ntesting to call this function")
+        timer_prompt = """
+You are now adjusting timer settings. Enter...
+N/n: To remove timer for every question.
+Any positive integer: To create a timer for every question with that entered amount of seconds.
+Input: """
+        setting_input = get_integer_input(timer_prompt)
         print(setting_input)
         # assign settings[timer] = settings_input
     # else if change_setting == "3"
