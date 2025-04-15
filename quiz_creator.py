@@ -204,7 +204,13 @@ Input: """
     # else if change_setting == "6"
     elif change_settings == "6":
         # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
-        print("show score every question")
+        show_score_every_question_prompt = """
+You are now adjusting show_score_every_question. Enter...
+Y/y: Enable this setting so that the score is shown while the quiz is still being taken.
+N/n: Disable this setting so that the score is not shown while the quiz is still being taken.
+Input: """
+        setting_input = get_specific_input(show_score_every_question_prompt)
+        print(setting_input)
         # assign settings[show_score_every_question] = setting_input
     # else
     else:
