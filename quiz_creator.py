@@ -35,7 +35,6 @@ def get_integer_input(prompt, limit=None):
         try:
             # get user_input with input(prompt).lower()
             user_input = input(prompt)
-            print(user_input)
 
             # check if limit is None and user_input == "n"
             if limit is None and user_input == "n":
@@ -60,12 +59,16 @@ def get_integer_input(prompt, limit=None):
             return user_input
         # except
         except:
-            print("exception raised")
             # print "Invalid value entered. Enter only positive integer greater than 0 "
+            print("\nInvalid value entered. Enter only positive integer greater than 0 ", end="")
             # check if limit is None
+            if limit is None:
                 # print in the same line "Or enter N/n to remove timer."
+                print("Or enter N/n to remove timer.")
             # else
+            else:
                 # print in the same line "to {limit}"
+                print(f"to {limit}")
 
 # define write_question(file) function
     # write to file "==============================\n"
@@ -157,7 +160,7 @@ Input: """
     # else if change_setting == "2"
     elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
-        setting_input = get_integer_input("testing to call this function")
+        setting_input = get_integer_input("\ntesting to call this function")
         print(setting_input)
         # assign settings[timer] = settings_input
     # else if change_setting == "3"
