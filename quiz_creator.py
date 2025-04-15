@@ -134,8 +134,8 @@ Y/y: Allow the quiztaker to change the settings of this quiz in the quiz program
 N/n: Disallow the quiztaker to change the settings of this quiz in the quiz program
 Input: """
         setting_input = get_specific_input(enable_change_settings_prompt)
-        print(setting_input)
-        # assign settings[enable_change_settings] == setting_input
+        # assign settings[enable_change_settings] = setting_input
+        settings["enable_change_settings"] = setting_input
     # else if change_setting == "2"
     elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
