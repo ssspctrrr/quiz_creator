@@ -61,10 +61,11 @@ def get_integer_input(prompt, limit=None):
         # except
         except:
             print("exception raised")
-            # print "Invalid value entered. Enter only integer from 1 to {limit}."
+            # print "Invalid value entered. Enter only positive integer greater than 0 "
             # check if limit is None
                 # print in the same line "Or enter N/n to remove timer."
-            # continue
+            # else
+                # print in the same line "to {limit}"
 
 # define write_question(file) function
     # write to file "==============================\n"
