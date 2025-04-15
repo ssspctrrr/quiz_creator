@@ -227,7 +227,9 @@ Input: """
     print("\nThe settings are now changed into the following:")
     
 # open file "quiz_questions_configuration.txt" as file
+with open("quiz_questions_config.txt", "w") as file:
     # write to file "A quiz on {topic}\n"
+    file.write(f"A QUIZ ABOUT: {topic}\n")
 
     # iterate over keys of settings
         # write to file "{key} = {settings[key]}\n"
