@@ -76,7 +76,9 @@ def write_question(file):
     file.write("==============================\n")
 
     # get question
+    question = input("Enter question: ")
     # write to file "{question}\n"
+    file.write(f"{question}\n")
 
     # get correct_answer
     # write to file ">>>" + correct_answer
