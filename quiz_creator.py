@@ -127,8 +127,14 @@ Input:
         break
     # else if change_setting == "1"
     elif change_settings == "1":
-        # get setting_input from get_integer_input("Enter y to enable the settings to be changed in the quiz program")
-        print("enable settings change")
+        # get setting_input from get_specific_input("Enter y to enable the settings to be changed in the quiz program")
+        enable_change_settings_prompt = """
+You are now adjusting enable_change_settings. Enter...
+Y/y: Allow the quiztaker to change the settings of this quiz in the quiz program.
+N/n: Disallow the quiztaker to change the settings of this quiz in the quiz program
+Input: """
+        setting_input = get_specific_input(enable_change_settings_prompt)
+        print(setting_input)
         # assign settings[enable_change_settings] == setting_input
     # else if change_setting == "2"
     elif change_settings == "2":
