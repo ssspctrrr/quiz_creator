@@ -53,8 +53,11 @@ def get_integer_input(prompt, limit=None):
                 # raise Exception
                 raise Exception
             # else if limit is not None and user_input > limit
+            elif limit is not None and user_input > limit:
                 # raise Exception
+                raise Exception
             # return user_input
+            return user_input
         # except
         except:
             print("exception raised")
