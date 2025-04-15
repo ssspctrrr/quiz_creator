@@ -237,6 +237,7 @@ with open("quiz_questions_config.txt", "w") as file:
         file.write(f"{setting} = {settings[setting]}\n")
 
     # write to file "START#########################\n"
+    file.write("START#########################\n")
 
     # loop infinitely
         # write to file "{question}"
