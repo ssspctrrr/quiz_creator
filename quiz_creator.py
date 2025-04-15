@@ -93,7 +93,7 @@ def write_question(file):
         file.write(f"{choice}\n")
 
 # ask user the topic of quiz
-topic = input("Enter the topic of this quizbelow by finishing the sentence.\nThis is a quiz about ")
+topic = input("Enter the topic of this quiz below by finishing the sentence.\nThis is a quiz about ")
 
 # set a dictionary named settings as...
 settings = {
@@ -254,7 +254,10 @@ Input: """
         # else
         else:
             # write to file "=============================="
+            file.write("==============================\n")
             # write to file "END***************************"
+            file.write("END***************************")
             # print "Quiz creator is now being terminated."
+            print("\nThe quiz creator will now be terminated.")
             # break
             break
