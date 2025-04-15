@@ -251,10 +251,14 @@ N/n: End this program and finalize the entered questions & choices.
 Input: """
         should_continue = get_specific_input(should_continue_prompt)
         # check if should_continue
+        if should_continue:
+            pass
             # write to file "CONTINUE======================\N"
             # print "You will now enter a new question and its choices.\n"
             # continue
         # else
+        else:
             # write to file "END***************************\n"
             # print "Quiz creator is now being terminated."
             # break
+            break
