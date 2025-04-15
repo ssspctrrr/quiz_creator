@@ -81,7 +81,9 @@ def write_question(file):
     file.write(f"{question}\n")
 
     # get correct_answer
+    correct_answer = input("Enter the correct answer: ")
     # write to file ">>>" + correct_answer
+    file.write(f">>>{correct_answer}\n")
 
     # iterate three times
         # input choice
