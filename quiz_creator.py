@@ -199,8 +199,8 @@ Y/y: Enable this setting so that there is a special screen at the end of the qui
 N/n: Disable this setting so that there is no special screen at the end of the quiz that shows all correct answers.
 Input: """     
         setting_input = get_specific_input(show_correct_answer_at_end_prompt)
-        print(setting_input)
         # assign settings[show_correct_answer_at_end] = setting_input
+        settings["show_correct_answer_at_end"] = setting_input
     # else if change_setting == "6"
     elif change_settings == "6":
         # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
