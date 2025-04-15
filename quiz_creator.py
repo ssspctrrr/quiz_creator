@@ -29,10 +29,13 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
 
 # define get_integer_input(prompt, limit=None)
 def get_integer_input(prompt, limit=None):
-    print(prompt, "get integer input function called")
     # loop inifinitely
+    while True:
         # try
+        try:
             # get user_input with input(prompt).lower()
+            user_input = input(prompt)
+            print(user_input)
 
             # check if limit is None and user_input == "n"
                 # return False
@@ -46,6 +49,8 @@ def get_integer_input(prompt, limit=None):
                 # raise Exception
             # return user_input
         # except
+        except:
+            pass
             # print "Invalid value entered. Enter only integer from 1 to {limit}."
             # check if limit is None
                 # print in the same line "Or enter N/n to remove timer."
