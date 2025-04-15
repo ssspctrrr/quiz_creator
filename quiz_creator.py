@@ -28,6 +28,8 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
             print(f"\nInvalid value entered. Enter only {possible_values}")
 
 # define get_integer_input(prompt, limit=None)
+def get_integer_input(prompt, limit=None):
+    print(prompt, "get integer input function called")
     # loop inifinitely
         # try
             # get user_input with input(prompt).lower()
@@ -139,7 +141,7 @@ Input: """
     # else if change_setting == "2"
     elif change_settings == "2":
         # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
-        print("timer")
+        setting_input = get_integer_input("testing to call this function")
         # assign settings[timer] = settings_input
     # else if change_setting == "3"
     elif change_settings == "3":
