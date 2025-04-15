@@ -177,8 +177,8 @@ You are now adjusting the tries setting. Enter...
 Positive integer from 1 to 4: Allow quiztaker to have entered amount of times of tries while answer is wrong.
 Input: """
         setting_input = get_integer_input(tries_prompt, 4)
-        print(setting_input)
         # assign settings[tries] = settings_input
+        settings["tries"] = setting_input
     # else if change_setting == "4"
     elif change_settings == "4":
         # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
