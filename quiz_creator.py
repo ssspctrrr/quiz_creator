@@ -68,7 +68,7 @@ def get_integer_input(prompt, limit=None):
             # else
             else:
                 # print in the same line "to {limit}"
-                print(f"to {limit}")
+                print(f"to {limit}.")
 
 # define write_question(file) function
     # write to file "==============================\n"
@@ -118,7 +118,7 @@ settings = {
 }
 
 # print "These are the default settings"
-print("The quiz will use these default settings:")
+print("\nThe quiz will currently use these default settings:")
 # loop infinitely
 while True:
     # print settings of the quiz
@@ -130,15 +130,14 @@ while True:
     settings_prompt = """\
 Enter...
 Q/q: Quit Adjusting the settings and finalize the current settings.
-1: Adjust enable_change_setting which adjusts whether the quiztaker can change the settings in the quiz program
-2: Disable timer or enable and input a timer (in seconds) for every question
-3: Enter how many tries the quiztaker has to get a correct answer per question
-4: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question
-5: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz
-6: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz
-7: Adjust "show_score_end" which adjusts whether the score is shown at the end
-Input: 
-"""
+1: Adjust enable_change_setting which adjusts whether the quiztaker can change the settings in the quiz program.
+2: Disable timer or enable and input a timer (in seconds) for every question.
+3: Enter how many tries the quiztaker has to get a correct answer per question.
+4: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question.
+5: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz.
+6: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz.
+7: Adjust "show_score_end" which adjusts whether the score is shown at the end.
+Input: """
     change_settings = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
     # check if change_settings == "q"
     if change_settings == "q":
@@ -152,7 +151,7 @@ Input:
         enable_change_settings_prompt = """
 You are now adjusting enable_change_settings. Enter...
 Y/y: Allow the quiztaker to change the settings of this quiz in the quiz program.
-N/n: Disallow the quiztaker to change the settings of this quiz in the quiz program
+N/n: Disallow the quiztaker to change the settings of this quiz in the quiz program.
 Input: """
         setting_input = get_specific_input(enable_change_settings_prompt)
         # assign settings[enable_change_settings] = setting_input
@@ -225,7 +224,7 @@ Input: """
         settings["show_score_end"] = setting_input
 
     # print "The settings are now changed into the following:"
-    print("The settings are now changed into the following:")
+    print("\nThe settings are now changed into the following:")
     
 # open file "quiz_questions_configuration.txt" as file
     # write to file "A quiz on {topic}\n"
