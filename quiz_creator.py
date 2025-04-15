@@ -210,8 +210,8 @@ Y/y: Enable this setting so that the score is shown while the quiz is still bein
 N/n: Disable this setting so that the score is not shown while the quiz is still being taken.
 Input: """
         setting_input = get_specific_input(show_score_every_question_prompt)
-        print(setting_input)
         # assign settings[show_score_every_question] = setting_input
+        settings["show_score_every_question"] = setting_input
     # else
     else:
         # get setting_input from get_specific_input("Enter y if user wants to show score at the end of quiz")
