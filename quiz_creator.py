@@ -47,8 +47,11 @@ def get_integer_input(prompt, limit=None):
                 raise Exception
 
             # convert user_input to integer
+            user_input = int(user_input)
             # check if user_input < 1
+            if user_input < 1:
                 # raise Exception
+                raise Exception
             # else if limit is not None and user_input > limit
                 # raise Exception
             # return user_input
