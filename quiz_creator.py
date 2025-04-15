@@ -166,8 +166,9 @@ N/n: To remove timer for every question.
 Any positive integer: To create a timer for every question with that entered amount of seconds.
 Input: """
         setting_input = get_integer_input(timer_prompt)
-        print(setting_input)
         # assign settings[timer] = settings_input
+        settings["timer"] = setting_input
+        print(settings["timer"])
     # else if change_setting == "3"
     elif change_settings == "3":
         # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
