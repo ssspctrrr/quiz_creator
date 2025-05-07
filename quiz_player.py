@@ -35,7 +35,28 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
             # print "Invalid value entered. Enter only {possible_values}."
             print(f"\nInvalid value entered. Enter only {possible_values}")
 
-# define get_integer_input function
+# define get_integer_input function with prompt as parameter
+def get_integer_input(prompt):
+    # loop inifinitely
+    while True:
+        # try
+        try:
+            # get user_input and convert to int
+            user_input = int(input(prompt))
+            # check if user_input < 1
+            if user_input < 1:
+                # raise Exception
+                raise Exception
+            # else if user_input > 4
+            elif user_input > 4:
+                # raise Exception
+                raise Exception
+            # return user_input
+            return user_input
+        # except
+        except:
+            # print "Invalid value entered. Enter only positive integer greater than 0 "
+            print("\nInvalid value entered. Enter only positive integer greater than 0 to 4")
 
 # define change_settings function with settings as parameter
 def change_settings():
@@ -53,7 +74,6 @@ Q/q: Quit Adjusting the settings and finalize the current settings.
 Input: """
         # set setting_to_change by calling get_specific_input with possible_values as ["q", "1", "2", "3", "4", "5"]
         setting_to_change = get_specific_input(change_setting_prompt, possible_values=["q", "1", "2", "3", "4", "5"])
-        print(setting_to_change)
 
         # check if setting_to_change == "q"
         if setting_to_change == "q":
@@ -64,8 +84,10 @@ Input: """
             break
 
         # elif setting_to_change == "1"
+        elif setting_to_change == "1":
             # create tries_prompt
             # set setting_input by calling get_integer_input
+            get_integer_input("enter number from 1-4")
             # assign settings[tries] = setting_input
         # elif setting_to_change == "2"
             # create show_correct_answer_each_question_prompt
