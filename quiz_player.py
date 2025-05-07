@@ -2,6 +2,9 @@
 import tkinter as tk
 
 # define get_boolean function
+def get_boolean(line, prefix):
+    bool_value = line.removeprefix(prefix).strip().lower() == "true"
+    return bool_value
 
 # define get_specific_input function
 
@@ -32,7 +35,9 @@ def main():
             # save settings from file
             elif index == 2:
                 settings["tries"] = int(line.removeprefix("tries = "))
-        print(settings["tries"])
+            elif index == 3:
+                settings["show_correct_answer_each_question"] = get_boolean(line, "show_correct_answer_each_question = ")
+        print(settings["show_correct_answer_each_question"])
 
         # if enable_change_settings == True
             # input if user wants to change settings for this quiz:
