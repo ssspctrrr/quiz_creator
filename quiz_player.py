@@ -148,7 +148,12 @@ Input: """
             settings["show_score_end"] = setting_input
 
         # print settings
+        print("\nThe settings have now been changed to...")
+        for setting in settings:
+            print(f"{setting}: {settings[setting]}")
+
     # return settings
+    return settings
 
 # define store_questions function
 
