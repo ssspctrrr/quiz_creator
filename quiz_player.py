@@ -33,11 +33,21 @@ def main():
             if index == 0:
                 topic = line.removeprefix("A QUIZ ABOUT: ").strip()
             # save settings from file
+            elif index == 1:
+                settings["enable_change_settings"] = get_boolean(line, "enable_change_settings = ")
             elif index == 2:
                 settings["tries"] = int(line.removeprefix("tries = "))
             elif index == 3:
                 settings["show_correct_answer_each_question"] = get_boolean(line, "show_correct_answer_each_question = ")
-        print(settings["show_correct_answer_each_question"])
+            elif index == 4:
+                settings["show_correct_answer_at_end"] = get_boolean(line, "show_correct_answer_at_end = ")
+            elif index == 5:
+                settings["show_score_every_question"] = get_boolean(line, "show_score_every_question = ")
+            elif index == 6:
+                settings["show_score_end"] = get_boolean(line, "show_score_end = ")
+
+        for key in settings:
+            print(f"{key}: {settings[key]}")
 
         # if enable_change_settings == True
             # input if user wants to change settings for this quiz:
