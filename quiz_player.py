@@ -96,9 +96,17 @@ Input: """
             settings["tries"] = setting_input
 
         # elif setting_to_change == "2"
+        elif setting_to_change == "2":
             # create show_correct_answer_each_question_prompt
+            show_correct_answer_each_question_prompt = """
+You are now adjusting show_correct_answer_each_question_prompt. Enter...
+Y/y: Enable this setting so that the correct answer is shown after each questions in the quiz.
+N/n: Disable this so that the correct answer is not shown after each questions in the quiz.
+Input: """
             # set setting_input by calling get_specific_input
+            setting_input = get_specific_input(show_correct_answer_each_question_prompt)
             # assign settings[show_correct_answer_each_question] = setting_input
+            settings["show_correct_answer_each_question"] = setting_input
 
         # elif setting_to_change == "3"
             # create show_correct_answer_at_end_prompt
