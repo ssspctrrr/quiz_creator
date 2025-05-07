@@ -38,6 +38,8 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
 # define get_integer_input function
 
 # define change_settings function
+def change_settings():
+    print("change settings function called")
 
 # define store_questions function
 
@@ -74,9 +76,21 @@ def main():
                 settings["show_score_end"] = get_boolean(line, "show_score_end = ")
 
         # if enable_change_settings == True
+        if settings["enable_change_settings"]:
             # input if user wants to change settings for this quiz:
+            print("CURRENT SETTINGS:\n")
+            for key in settings:
+                print(f"{key}: {settings[key]}")
+
+            change_settings_prompt = """\nSince changing settings is enabled, do you want to change the current settings? Enter...
+Y/y: Change the settings (NOTE: Changing the settings here will not permanently change the settings for this quiz file).
+N/n: Keep the current settings and proceed to the quiz.
+"""
+            should_change_settings = get_specific_input(change_settings_prompt)
             # if yes
+            if should_change_settings:
                 # call change_settings function
+                settings = change_settings()
 
         # call store_questions function
 
