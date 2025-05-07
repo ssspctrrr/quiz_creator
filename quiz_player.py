@@ -22,8 +22,13 @@ import tkinter as tk
 # define main function
 def main():
     # open file for reading
+    with open("quiz_questions_config.txt", "r") as file:
         # iterate over lines 0 to 6
+        for index, line in enumerate(file):
             # save topic of quiz
+            if index == 0:
+                topic = line.removeprefix("A QUIZ ABOUT: ").strip()
+            print(topic)
             # save settings from file
 
         # if enable_change_settings == True
