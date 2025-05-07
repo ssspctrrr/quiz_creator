@@ -122,9 +122,17 @@ Input: """
             settings["show_correct_answer_at_end"] = setting_input
 
         # elif setting_to_change == "4"
+        elif setting_to_change == "4":
             # create show_score_every_question_prompt
+            show_score_every_question_prompt = """
+You are now adjusting show_score_every_question. Enter...
+Y/y: Enable this setting so that the score is shown while the quiz is still being taken.
+N/n: Disable this setting so that the score is not shown while the quiz is still being taken.
+Input: """
             # set setting_input by calling get_specific_input
+            setting_input = get_specific_input(show_score_every_question_prompt)
             # assign settings[show_score_every_question] = setting_input
+            settings["show_score_every_question"] = setting_input
 
         # elif setting_to_change == "5"
             # create show_score_end_prompt
