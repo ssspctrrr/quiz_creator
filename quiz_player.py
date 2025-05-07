@@ -135,9 +135,17 @@ Input: """
             settings["show_score_every_question"] = setting_input
 
         # elif setting_to_change == "5"
+        elif setting_to_change == "5":
             # create show_score_end_prompt
+            show_score_end_prompt = """
+You are now adjusting show_score_end. Enter...
+Y/y: Enable this setting so that the score is shown at the end of the quiz.
+N/n: Enable this setting so that the score is not shown at the end of the quiz.
+Input: """
             # set setting_input by calling get_specific_input
+            setting_input = get_specific_input(show_score_end_prompt)
             # assign settings[show_score_end_prompt] = setting_input
+            settings["show_score_end"] = setting_input
 
         # print settings
     # return settings
