@@ -59,7 +59,7 @@ def get_integer_input(prompt):
             print("\nInvalid value entered. Enter only positive integer greater than 0 to 4")
 
 # define change_settings function with settings as parameter
-def change_settings():
+def change_settings(settings):
     # loop infinitely
     while True:
         # create a prompt variable to which setting to change
@@ -73,7 +73,7 @@ Q/q: Quit Adjusting the settings and finalize the current settings.
 5: Adjust "show_score_end" which adjusts whether the score is shown at the end.
 Input: """
         # set setting_to_change by calling get_specific_input with possible_values as ["q", "1", "2", "3", "4", "5"]
-        setting_to_change = get_specific_input(change_setting_prompt, possible_values=["q", "1", "2", "3", "4", "5"])
+        setting_to_change = get_specific_input(change_setting_prompt, ["q", "1", "2", "3", "4", "5"])
 
         # check if setting_to_change == "q"
         if setting_to_change == "q":
@@ -89,22 +89,27 @@ Input: """
             # set setting_input by calling get_integer_input
             get_integer_input("enter number from 1-4")
             # assign settings[tries] = setting_input
+
         # elif setting_to_change == "2"
             # create show_correct_answer_each_question_prompt
             # set setting_input by calling get_specific_input
             # assign settings[show_correct_answer_each_question] = setting_input
+
         # elif setting_to_change == "3"
             # create show_correct_answer_at_end_prompt
             # set setting_input by calling get_specific_input
             # assign settings[show_correct_answer_at_end] = setting_input
+
         # elif setting_to_change == "4"
             # create show_score_every_question_prompt
             # set setting_input by calling get_specific_input
             # assign settings[show_score_every_question] = setting_input
+
         # elif setting_to_change == "5"
             # create show_score_end_prompt
             # set setting_input by calling get_specific_input
             # assign settings[show_score_end_prompt] = setting_input
+
         # print settings
     # return settings
 
@@ -157,7 +162,7 @@ Input: """
             # if yes
             if should_change_settings:
                 # call change_settings function
-                settings = change_settings()
+                settings = change_settings(settings)
 
         # call store_questions function
 
