@@ -86,9 +86,14 @@ Input: """
         # elif setting_to_change == "1"
         elif setting_to_change == "1":
             # create tries_prompt
+            tries_prompt = """
+You are now adjusting the tries setting. Enter...
+Positive integer from 1 to 4: Allow quiztaker to have entered amount of times of tries while answer is wrong.
+Input: """
             # set setting_input by calling get_integer_input
-            get_integer_input("enter number from 1-4")
+            setting_input = get_integer_input(tries_prompt)
             # assign settings[tries] = setting_input
+            settings["tries"] = setting_input
 
         # elif setting_to_change == "2"
             # create show_correct_answer_each_question_prompt
