@@ -7,6 +7,33 @@ def get_boolean(line, prefix):
     return bool_value
 
 # define get_specific_input function
+def get_specific_input(prompt, possible_values=["y", "n"]):
+    # loop infinitely
+    while True:
+        try:
+            # get user_input with input(prompt, possible_values).lower()
+            user_input = input(prompt).lower()
+
+            # check if user_input not in possible_values
+            if user_input not in possible_values:
+                # raise Exception
+                raise Exception
+            # else if possible_values != ["y", "n"]
+            elif possible_values != ["y", "n"]:
+                # return user_input
+                return user_input
+            # else if user_input == possible_values[0]
+            elif user_input == possible_values[0]:
+                # return True
+                return True
+            # else if user_input == possible_values[1]
+            elif user_input == possible_values[1]:
+                # return False
+                return False
+        # except
+        except:
+            # print "Invalid value entered. Enter only {possible_values}."
+            print(f"\nInvalid value entered. Enter only {possible_values}")
 
 # define get_integer_input function
 
@@ -45,9 +72,6 @@ def main():
                 settings["show_score_every_question"] = get_boolean(line, "show_score_every_question = ")
             elif index == 6:
                 settings["show_score_end"] = get_boolean(line, "show_score_end = ")
-
-        for key in settings:
-            print(f"{key}: {settings[key]}")
 
         # if enable_change_settings == True
             # input if user wants to change settings for this quiz:
