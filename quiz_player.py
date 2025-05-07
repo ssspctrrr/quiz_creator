@@ -54,9 +54,15 @@ Input: """
         # set setting_to_change by calling get_specific_input with possible_values as ["q", "1", "2", "3", "4", "5"]
         setting_to_change = get_specific_input(change_setting_prompt, possible_values=["q", "1", "2", "3", "4", "5"])
         print(setting_to_change)
+
         # check if setting_to_change == "q"
+        if setting_to_change == "q":
             # print "the current settings will now apply and you will now proceed to the quiz."
+            print("\nThe current settings will now apply and you will now proceed to the quiz")
+            print("Happy Quiztaking!!!")
             # break loop
+            break
+
         # elif setting_to_change == "1"
             # create tries_prompt
             # set setting_input by calling get_integer_input
