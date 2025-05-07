@@ -39,10 +39,21 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
 
 # define change_settings function with settings as parameter
 def change_settings():
-    pass
     # loop infinitely
+    while True:
         # create a prompt variable to which setting to change
+        change_setting_prompt = """
+Enter...
+Q/q: Quit Adjusting the settings and finalize the current settings.
+1: Enter how many tries the quiztaker has to get a correct answer per question.
+2: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question.
+3: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz.
+4: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz.
+5: Adjust "show_score_end" which adjusts whether the score is shown at the end.
+Input: """
         # set setting_to_change by calling get_specific_input with possible_values as ["q", "1", "2", "3", "4", "5"]
+        setting_to_change = get_specific_input(change_setting_prompt, possible_values=["q", "1", "2", "3", "4", "5"])
+        print(setting_to_change)
         # check if setting_to_change == "q"
             # print "the current settings will now apply and you will now proceed to the quiz."
             # break loop
