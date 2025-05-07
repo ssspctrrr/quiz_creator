@@ -37,9 +37,37 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
 
 # define get_integer_input function
 
-# define change_settings function
+# define change_settings function with settings as parameter
 def change_settings():
-    print("change settings function called")
+    pass
+    # loop infinitely
+        # create a prompt variable to which setting to change
+        # set setting_to_change by calling get_specific_input with possible_values as ["q", "1", "2", "3", "4", "5"]
+        # check if setting_to_change == "q"
+            # print "the current settings will now apply and you will now proceed to the quiz."
+            # break loop
+        # elif setting_to_change == "1"
+            # create tries_prompt
+            # set setting_input by calling get_integer_input
+            # assign settings[tries] = setting_input
+        # elif setting_to_change == "2"
+            # create show_correct_answer_each_question_prompt
+            # set setting_input by calling get_specific_input
+            # assign settings[show_correct_answer_each_question] = setting_input
+        # elif setting_to_change == "3"
+            # create show_correct_answer_at_end_prompt
+            # set setting_input by calling get_specific_input
+            # assign settings[show_correct_answer_at_end] = setting_input
+        # elif setting_to_change == "4"
+            # create show_score_every_question_prompt
+            # set setting_input by calling get_specific_input
+            # assign settings[show_score_every_question] = setting_input
+        # elif setting_to_change == "5"
+            # create show_score_end_prompt
+            # set setting_input by calling get_specific_input
+            # assign settings[show_score_end_prompt] = setting_input
+        # print settings
+    # return settings
 
 # define store_questions function
 
@@ -85,7 +113,7 @@ def main():
             change_settings_prompt = """\nSince changing settings is enabled, do you want to change the current settings? Enter...
 Y/y: Change the settings (NOTE: Changing the settings here will not permanently change the settings for this quiz file).
 N/n: Keep the current settings and proceed to the quiz.
-"""
+Input: """
             should_change_settings = get_specific_input(change_settings_prompt)
             # if yes
             if should_change_settings:
