@@ -109,9 +109,17 @@ Input: """
             settings["show_correct_answer_each_question"] = setting_input
 
         # elif setting_to_change == "3"
+        elif setting_to_change == "3":
             # create show_correct_answer_at_end_prompt
+            show_correct_answer_at_end_prompt = """
+You are now adjusting show_correct_answer_at end. Enter...
+Y/y: Enable this setting so that there is a special screen at the end of the quiz that shows all correct answers.
+N/n: Disable this setting so that there is no special screen at the end of the quiz that shows all correct answers.
+Input: """
             # set setting_input by calling get_specific_input
+            setting_input = get_specific_input(show_correct_answer_at_end_prompt)
             # assign settings[show_correct_answer_at_end] = setting_input
+            settings["show_correct_answer_at_end"] = setting_input
 
         # elif setting_to_change == "4"
             # create show_score_every_question_prompt
