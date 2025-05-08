@@ -202,11 +202,13 @@ def store_questions(file, should_show_right_answer):
             # shuffle the choices in questions[current_question]
             random.shuffle(questions[current_question])
 
-    for question in questions:
-        print(f"{question}: {questions[question]}")
-
         # if settings[show_correct_answer_at_end] and line startswith ">>>"
+        if should_show_right_answer and line.startswith(">>>"):
             # correct_answers[current_question] = line.removeprefix(">>>").strip()
+            correct_answers[current_question] = line.removeprefix(">>>").strip()
+
+    for question in correct_answers:
+        print(f"{question}: {correct_answers[question]}")
 
     # shuffle questions and store it into shuffled_question
 
