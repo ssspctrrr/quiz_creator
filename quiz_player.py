@@ -175,8 +175,12 @@ def store_questions(file, should_show_right_answer):
 
     # iterate over lines in file
     for line in file:
+        # elif line == "END***************************"
+        if line == "END***************************":
+            # break loop
+            break
         # check if line == "=============================="
-        if line == "==============================\n":
+        elif line == "==============================\n":
             # set question_counter = 5
             question_counter = 5
         # elif question_counter == 5
