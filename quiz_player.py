@@ -169,8 +169,11 @@ def store_questions(file, should_show_right_answer):
         correct_answers = {}
 
     # iterate over lines in file
+    for line in file:
         # check if line == "=============================="
+        if line == "==============================":
             # set question_counter = 5
+            question_counter = 5
         # elif question_counter == 5
             # assign current_question as line
             # assign questions[current_question] as empty array
@@ -178,9 +181,7 @@ def store_questions(file, should_show_right_answer):
             # append line to questions[current_question]
         # elif question_counter == 1
             # append line to questions[current_question]
-            # shuffle the choices in questions[current_question]            
-        # else
-            # continue
+            # shuffle the choices in questions[current_question]
 
         # if settings[show_correct_answer_at_end] and line startswith ">>>"
             # correct_answers[current_question] = line.removeprefix(">>>").strip()
