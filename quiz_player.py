@@ -1,6 +1,8 @@
 # import tkinter
 import tkinter as tk
 
+import random
+
 # define get_boolean function
 def get_boolean(line, prefix):
     bool_value = line.removeprefix(prefix).strip().lower() == "true"
@@ -168,20 +170,36 @@ def store_questions(file, should_show_right_answer):
         global correct_answers
         correct_answers = {}
 
+    # define question_counter as 0
+    question_counter = 0
+
     # iterate over lines in file
     for line in file:
         # check if line == "=============================="
-        if line == "==============================":
+        if line == "==============================\n":
             # set question_counter = 5
             question_counter = 5
         # elif question_counter == 5
+        elif question_counter == 5:
             # assign current_question as line
+            current_question = line.strip()
             # assign questions[current_question] as empty array
+            questions[current_question] = []
+            question_counter -= 1
         # elif question_counter in range(2,5)
+        elif question_counter in range(2,5):
             # append line to questions[current_question]
+            questions[current_question].append(line.strip())
+            question_counter -= 1
         # elif question_counter == 1
+        elif question_counter == 1:
             # append line to questions[current_question]
+            questions[current_question].append(line.strip())
             # shuffle the choices in questions[current_question]
+            random.shuffle(questions[current_question])
+
+    for question in questions:
+        print(f"{question}: {questions[question]}")
 
         # if settings[show_correct_answer_at_end] and line startswith ">>>"
             # correct_answers[current_question] = line.removeprefix(">>>").strip()
@@ -221,6 +239,9 @@ def main():
                 settings["show_score_every_question"] = get_boolean(line, "show_score_every_question = ")
             elif index == 6:
                 settings["show_score_end"] = get_boolean(line, "show_score_end = ")
+        
+        # reset read cursor to 0
+        file.seek(0)
 
         # if enable_change_settings == True
         if settings["enable_change_settings"]:
