@@ -156,12 +156,18 @@ Input: """
     return settings
 
 # define store_questions function with file as parameter
+def store_questions(file, should_show_right_answer):
     # create empty questions dictionary
+    questions = {}
     # create empty shuffled_questions dictionary
+    shuffled_questions = {}
 
     # check if settings[show_correct_answer_at_end]
+    if should_show_right_answer:
         # create empty global correct_answers dictionary
-        
+        global correct_answers
+        correct_answers = {}
+
     # iterate over lines in file
         # check if line == "=============================="
             # set question_counter = 5
@@ -233,6 +239,7 @@ Input: """
                 settings = change_settings(settings)
 
         # call store_questions function
+        questions = store_questions(file, settings["show_correct_answer_at_end"])
 
     # set up root window
     root = tk.Tk()
