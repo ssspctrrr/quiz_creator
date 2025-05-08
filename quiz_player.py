@@ -207,12 +207,14 @@ def store_questions(file, should_show_right_answer):
             # correct_answers[current_question] = line.removeprefix(">>>").strip()
             correct_answers[current_question] = line.removeprefix(">>>").strip()
 
-    for question in correct_answers:
-        print(f"{question}: {correct_answers[question]}")
-
     # shuffle questions and store it into shuffled_question
+    questions_keys = list(questions.keys())
+    random.shuffle(questions_keys)
+    for question in questions_keys:
+        shuffled_questions[question] = questions[question]
 
     # returned shuffled_questions
+    return shuffled_questions
 
 # define check_correct_answer function
 
@@ -268,6 +270,7 @@ Input: """
 
         # call store_questions function
         questions = store_questions(file, settings["show_correct_answer_at_end"])
+        print(questions)
 
     # set up root window
     root = tk.Tk()
