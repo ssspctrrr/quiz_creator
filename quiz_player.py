@@ -155,7 +155,33 @@ Input: """
     # return settings
     return settings
 
-# define store_questions function
+# define store_questions function with file as parameter
+    # create empty questions dictionary
+    # create empty shuffled_questions dictionary
+
+    # check if settings[show_correct_answer_at_end]
+        # create empty global correct_answers dictionary
+        
+    # iterate over lines in file
+        # check if line == "=============================="
+            # set question_counter = 5
+        # elif question_counter == 5
+            # assign current_question as line
+            # assign questions[current_question] as empty array
+        # elif question_counter in range(2,5)
+            # append line to questions[current_question]
+        # elif question_counter == 1
+            # append line to questions[current_question]
+            # shuffle the choices in questions[current_question]            
+        # else
+            # continue
+
+        # if settings[show_correct_answer_at_end] and line startswith ">>>"
+            # correct_answers[current_question] = line.removeprefix(">>>").strip()
+
+    # shuffle questions and store it into shuffled_question
+
+    # returned shuffled_questions
 
 # define check_correct_answer function
 
