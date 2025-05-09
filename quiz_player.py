@@ -291,19 +291,31 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     # create buttons_frame
     buttons_frame = tk.Frame(question_screen, bg="lightblue")
     # pack buttons_frame to question_screen
-    buttons_frame.pack(ipadx=5, ipady=5)
+    buttons_frame.pack()
 
     # create button_A with text=choices[0], command=check_correct_answer
+    button_A = tk.Button(buttons_frame, text=choices[0], font=("Arial", 11))
+    button_A.config(width=20, height=3, wraplength=170)
     # grid place button_A to buttons_frame
+    button_A.grid(row=0, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_B with text=choices[1], command=check_correct_answer
+    button_B = tk.Button(buttons_frame, text=choices[1], font=("Arial", 11))
+    button_B.config(width=20, height=3, wraplength=170)
     # grid place button_B to buttons_frame
+    button_B.grid(row=0, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_C with text=choices[2], command=check_correct_answer
+    button_C = tk.Button(buttons_frame, text=choices[2], font=("Arial", 11))
+    button_C.config(width=20, height=3, wraplength=170)
     # grid place button_C to buttons_frame
+    button_C.grid(row=1, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_D with text=choices[3], command=check_correct_answer
+    button_D = tk.Button(buttons_frame, text=choices[3], font=("Arial", 11))
+    button_D.config(width=20, height=3, wraplength=170)
     # grid place button_D to buttons_frame
+    button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
 # define end_screen function
 
