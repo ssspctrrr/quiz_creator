@@ -28,31 +28,15 @@ def get_specific_input(prompt, possible_values=["y", "n"]):
             print(f"\nInvalid value entered. Enter only {possible_values}")
 
 # define get_integer_input(prompt, limit=None)
-def get_integer_input(prompt, limit=None):
+def get_integer_input(prompt):
     # loop inifinitely
     while True:
         # try
         try:
             # get user_input with input(prompt).lower()
-            user_input = input(prompt)
-
-            # check if limit is None and user_input == "n"
-            if limit is None and user_input == "n":
-                # return False
-                return False
-            # else if limit is None and user_input != "n" and user_input is not numerical
-            elif limit is None and not user_input.isnumeric():
-                # raise Exception
-                raise Exception
-
-            # convert user_input to integer
-            user_input = int(user_input)
+            user_input = int(input(prompt))
             # check if user_input < 1
-            if user_input < 1:
-                # raise Exception
-                raise Exception
-            # else if limit is not None and user_input > limit
-            elif limit is not None and user_input > limit:
+            if user_input < 1 or user_input > 4:
                 # raise Exception
                 raise Exception
             # return user_input
@@ -60,15 +44,7 @@ def get_integer_input(prompt, limit=None):
         # except
         except:
             # print "Invalid value entered. Enter only positive integer greater than 0 "
-            print("\nInvalid value entered. Enter only positive integer greater than 0 ", end="")
-            # check if limit is None
-            if limit is None:
-                # print in the same line "Or enter N/n to remove timer."
-                print("Or enter N/n to remove timer.")
-            # else
-            else:
-                # print in the same line "to {limit}"
-                print(f"to {limit}.")
+            print(f"\nInvalid value entered. Enter only positive integer greater than 0 to 4")
 
 # define write_question(file) function
 def write_question(file):
@@ -99,8 +75,6 @@ topic = input("Enter the topic of this quiz below by finishing the sentence.\nTh
 settings = {
     # enable_change_settings: True
     "enable_change_settings": True,
-    # timer: False
-    "timer": False,
     # tries: 1
     "tries": 1,
     # show_correct_answer_each_question: True
@@ -127,12 +101,11 @@ while True:
 Enter...
 Q/q: Quit Adjusting the settings and finalize the current settings.
 1: Adjust enable_change_setting which adjusts whether the quiztaker can change the settings in the quiz program.
-2: Disable timer or enable and input a timer (in seconds) for every question.
-3: Enter how many tries the quiztaker has to get a correct answer per question.
-4: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question.
-5: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz.
-6: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz.
-7: Adjust "show_score_end" which adjusts whether the score is shown at the end.
+2: Enter how many tries the quiztaker has to get a correct answer per question.
+3: Adjust show_correct_answer_each_question which adjusts whether the correct answer is shown after every question.
+4: Adjust show_correct_answer_at_end which adjusts whether all correct answers are shown at the end of quiz.
+5: Adjust show_score_every_question which adjusts whether the score is shown while taking the quiz.
+6: Adjust "show_score_end" which adjusts whether the score is shown at the end.
 Input: """
     change_settings = get_specific_input(settings_prompt, ["q", "1", "2", "3", "4", "5", "6", "7"])
     # check if change_settings == "q"
@@ -154,28 +127,16 @@ Input: """
         settings["enable_change_settings"] = setting_input
     # else if change_setting == "2"
     elif change_settings == "2":
-        # get setting_input from get_integer_input("Enter number of seconds for timer or N/n to remove timer")
-        timer_prompt = """
-You are now adjusting timer settings. Enter...
-N/n: To remove timer for every question.
-Any positive integer: To create a timer for every question with that entered amount of seconds.
-Input: """
-        setting_input = get_integer_input(timer_prompt)
-        # assign settings[timer] = settings_input
-        settings["timer"] = setting_input
-        print(settings["timer"])
-    # else if change_setting == "3"
-    elif change_settings == "3":
         # get setting_input from get_integer_input("Enter value for amount of tries", limit=4)
         tries_prompt = """
 You are now adjusting the tries setting. Enter...
 Positive integer from 1 to 4: Allow quiztaker to have entered amount of times of tries while answer is wrong.
 Input: """
-        setting_input = get_integer_input(tries_prompt, 4)
+        setting_input = get_integer_input(tries_prompt)
         # assign settings[tries] = settings_input
         settings["tries"] = setting_input
-    # else if change_setting == "4"
-    elif change_settings == "4":
+    # else if change_setting == "3"
+    elif change_settings == "3":
         # get setting_input from get_specific_input("Enter y if user wants to show correct answer each question")
         show_correct_answer_each_question_prompt = """
 You are now adjusting show_correct_answer_each_question_prompt. Enter...
@@ -185,8 +146,8 @@ Input: """
         setting_input = get_specific_input(show_correct_answer_each_question_prompt)
         # assign settings[show_correct_answer_each_question] = settings_input
         settings["show_correct_answer_each_question"] = setting_input
-    # else if change_setting == "5"
-    elif change_settings == "5":
+    # else if change_setting == "4"
+    elif change_settings == "4":
         # get setting_input from get_specific_input("Enter y if user wants to show all correct answer at the end of quiz")
         show_correct_answer_at_end_prompt = """
 You are now adjusting show_correct_answer_at end. Enter...
@@ -196,8 +157,8 @@ Input: """
         setting_input = get_specific_input(show_correct_answer_at_end_prompt)
         # assign settings[show_correct_answer_at_end] = setting_input
         settings["show_correct_answer_at_end"] = setting_input
-    # else if change_setting == "6"
-    elif change_settings == "6":
+    # else if change_setting == "5"
+    elif change_settings == "5":
         # get setting_input from get_specific_input("Enter y if user wants to show score after every question")
         show_score_every_question_prompt = """
 You are now adjusting show_score_every_question. Enter...
