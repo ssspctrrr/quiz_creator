@@ -220,7 +220,7 @@ def store_questions(file, should_show_right_answer):
 # define main_screen with root, question_index, questions_list, questions, topic, score
 def main_screen(root, settings, question_index, questions_list, questions, topic, score):
     # define tries_left as settings[tries]
-    tries = settings[tries]
+    tries = settings["tries"]
 
     # check if current_index == len(questions_list)
     if question_index == len(questions_list):
@@ -235,7 +235,9 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         widget.destroy()
 
     # create topic_label
+    topic_label = tk.Label(root, text=topic, font=("Times New Roman", 20))
     # place topic_label to root
+    topic_label.place(relx=0.5, rely=0.075, anchor="center")
 
     # create check_answer_label with no text
     # place check_answer_label to root
