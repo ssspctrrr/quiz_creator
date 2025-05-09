@@ -233,17 +233,14 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
         root.after(1000, lambda: main_screen(root, settings, question_index, questions_list, questions, topic, score))
     # else
     else:
-        print("answer is incorrect")
         # decrement tries by 1
         tries -= 1
-        print(tries)
         # check if tries > 0
         if tries > 0:
             # config check_answer_label with text=Wrong + tries
             check_answer_label.config(text=f"Wrong Answer! {tries} left.", fg="red")
         # else:
         else:
-            print("no more tries")
             # message = Wrong
             message = "Wrong!"
             # if settings[show_correct_each_question]
@@ -270,6 +267,7 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         for widget in root.winfo_children():
             widget.destroy()
         # call end_screen()
+        end_screen()
     
     # destroy all current widgets in root
     for widget in root.winfo_children():
@@ -372,6 +370,8 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
 # define end_screen function
+def end_screen():
+    print(correct_answers)
 
 # define main function
 def main():
