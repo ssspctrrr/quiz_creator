@@ -216,7 +216,7 @@ def store_questions(file, should_show_right_answer):
     return shuffled_questions
 
 # define check_correct_answer function
-def check_correct_answer(root, settings, selected, correct_answer, check_answer_label):
+def check_correct_answer(root, settings, selected, correct_answer, check_answer_label, questions, questions_list, topic):
     # declare score, question_index, tries as global
     global score, question_index, tries
 
@@ -224,9 +224,13 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
     if selected == correct_answer:
         print("answer is correct")
         # add 1 to score
+        score += 1
         #config check_answer_label with text=Correct
+        check_answer_label.config(text="Correct!", fg="green")
         # add 1 to question_index
-        # call question_screen with a delay
+        question_index += 1
+        # call main_screen with a delay
+        root.after(1000, lambda: main_screen(root, settings, question_index, questions_list, questions, topic, score))
     # else
     else:
         print("answer is incorrect")
@@ -326,28 +330,32 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     # create button_A with text=choices[0], command=check_correct_answer
     button_A = tk.Button(buttons_frame, text=choices[0], font=("Arial", 11))
     button_A.config(width=20, height=3, wraplength=170)
-    button_A.config(command=lambda selected=choices[0]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
+    button_A.config(command=lambda selected=choices[0]: check_correct_answer(
+        root, settings, selected, correct_answer, check_answer_label, questions, questions_list, topic))
     # grid place button_A to buttons_frame
     button_A.grid(row=0, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_B with text=choices[1], command=check_correct_answer
     button_B = tk.Button(buttons_frame, text=choices[1], font=("Arial", 11))
     button_B.config(width=20, height=3, wraplength=170)
-    button_B.config(command=lambda selected=choices[1]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
+    button_B.config(command=lambda selected=choices[1]: check_correct_answer(
+        root, settings, selected, correct_answer, check_answer_label, questions, questions_list, topic))
     # grid place button_B to buttons_frame
     button_B.grid(row=0, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_C with text=choices[2], command=check_correct_answer
     button_C = tk.Button(buttons_frame, text=choices[2], font=("Arial", 11))
     button_C.config(width=20, height=3, wraplength=170)
-    button_C.config(command=lambda selected=choices[2]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
+    button_C.config(command=lambda selected=choices[2]: check_correct_answer(
+        root, settings, selected, correct_answer, check_answer_label, questions, questions_list, topic))
     # grid place button_C to buttons_frame
     button_C.grid(row=1, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_D with text=choices[3], command=check_correct_answer
     button_D = tk.Button(buttons_frame, text=choices[3], font=("Arial", 11))
     button_D.config(width=20, height=3, wraplength=170)
-    button_D.config(command=lambda selected=choices[3]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
+    button_D.config(command=lambda selected=choices[3]: check_correct_answer(
+        root, settings, selected, correct_answer, check_answer_label, questions, questions_list, topic))
     # grid place button_D to buttons_frame
     button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
@@ -410,11 +418,13 @@ Input: """
     root.geometry("667x500")
 
     # define empty score
+    global score
     score = 0
     # define questions_list
     questions_list = list(questions.keys())
 
     # define question_index
+    global question_index
     question_index = 0
 
     # call main_screen
