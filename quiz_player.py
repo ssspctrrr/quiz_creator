@@ -316,7 +316,13 @@ Input: """
     end_screen = tk.Frame()
 
     # iterate over the keys in questions dictionary (this will be made in store_questions function)
+    for question in questions:
+        print(f"{question}: {questions[question]}")
+        # assign tries = settings[tries]
+        tries = settings["tries"]
         # iterate over number of tries
+        for num_try in range(1, tries+1):
+            print(num_try)
             # call main_screen(questions[question], tries, score, settings["show_score_every_question"])
             # check if is_answer_correct (will be made in check_correct_answer function)
                 # score += 1
