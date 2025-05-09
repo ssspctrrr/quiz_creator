@@ -220,7 +220,40 @@ def store_questions(file, should_show_right_answer):
 
 # define show_correct_answer_screen
 
-# define question_screen
+# define main_screen
+    # create main_screen_frame
+    # place main_screen_frame to root 
+
+    # create quiz_topic_label
+    # place quiz_topic_label to main_screen_frame
+
+    # create tries_label
+    # place tries_label to main_screen_frame
+
+    # check if should_show_score
+        # create score_label
+        # place to main_screen_frame
+
+    # create questions_frame
+    # place questions_frame to main_screen_frame
+
+    # create question_label
+    # pack question_label to questions_frame
+
+    # create buttons_frame
+    # pack buttons_frame to question_label
+    
+    # create button_A
+    # grid place button_A to buttons_frame
+
+    # create button_B
+    # grid place button_B to buttons_frame
+
+    # create button_C
+    # grid place button_C to buttons_frame
+
+    # create button_D
+    # grid place button_D to buttons_frame
 
 # define show_correct_answer_screen function
 
@@ -284,7 +317,7 @@ Input: """
 
     # iterate over the keys in questions dictionary (this will be made in store_questions function)
         # iterate over number of tries
-            # call main_screen(questions[question], tries, score)
+            # call main_screen(questions[question], tries, score, settings["show_score_every_question"])
             # check if is_answer_correct (will be made in check_correct_answer function)
                 # score += 1
                 # break
