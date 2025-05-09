@@ -219,6 +219,8 @@ def store_questions(file, should_show_right_answer):
 # define check_correct_answer function
 
 # define main_screen
+def main_screen(root):
+    print("function called")
 
 # define end_screen function
 
@@ -277,10 +279,13 @@ Input: """
     # define empty score
     score = 0
     # define questions_list
+    questions_list = list(questions.keys())
 
     # define question_index
+    question_index = 0
 
     # call main_screen
+    main_screen(root)
 
     # run tk.mainloop()
     tk.mainloop()
