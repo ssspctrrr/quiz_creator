@@ -222,7 +222,6 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
 
     # check if selected == correct_answer:
     if selected == correct_answer:
-        print("answer is correct")
         # add 1 to score
         score += 1
         #config check_answer_label with text=Correct
@@ -261,13 +260,13 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     tries = settings["tries"]
 
     # check if current_index == len(questions_list)
-    if question_index == len(questions_list):
-        print("no more questions")
+    if question_index >= len(questions_list):
         # destroy all current widgets in root
         for widget in root.winfo_children():
             widget.destroy()
         # call end_screen()
-        end_screen(topic, root, score, settings)
+        root.after(0, lambda: end_screen(topic, root, score, settings))
+        return
     
     # destroy all current widgets in root
     for widget in root.winfo_children():
@@ -374,7 +373,7 @@ def end_screen(topic, root, score, settings):
     # create end_label
     end_label = tk.Label(root, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20))
     # pack end_label to root
-    end_label.pack()
+    end_label.pack(expand=True)
 
     # check if settings[show_score_end]
         # create score_label with text="Score: {score}/{len(correct_answer)}"
