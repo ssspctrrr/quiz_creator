@@ -244,6 +244,11 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     # place check_answer_label to root
     check_answer_label.place(relx=0.5, rely=0.935, anchor="center")
 
+    # create tries_label
+    tries_label = tk.Label(root, text=f"Tries Left: {tries}", font=("Arial", "12"))
+    # place tries_label to root
+    tries_label.place(relx=0.035, rely=0.965, anchor="sw")
+
     # check if settings[show_score_every_question]
     if settings["show_score_every_question"]:
         # create score_label
