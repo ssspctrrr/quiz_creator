@@ -282,16 +282,16 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         # pop choice_letter[0]
         choice_letter.pop(0)
 
-    print(choices)
-
     # create question_label
-    question_label = tk.Label(question_screen, text=question, font=("Arial", 11), bg="pink")
-    question_label.config(width=40, height=3)
+    question_label = tk.Label(question_screen, text=question, font=("Arial", 11))
+    question_label.config(width=40, height=3, wraplength=300)
     # pack question_label to question_screen
     question_label.pack(ipadx=5, ipady=5, padx=5, pady=5)
 
     # create buttons_frame
+    buttons_frame = tk.Frame(question_screen, bg="lightblue")
     # pack buttons_frame to question_screen
+    buttons_frame.pack(ipadx=5, ipady=5)
 
     # create button_A with text=choices[0], command=check_correct_answer
     # grid place button_A to buttons_frame
