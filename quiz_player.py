@@ -388,11 +388,18 @@ def end_screen(topic, root, score, settings, num_questions):
         score_label.pack(padx=10, pady=10)
 
     # check if settings[show_correct_answer_at_end]
+    if settings["show_correct_answer_at_end"]:
         # define correct_answers_text
+        correct_answers_text = ""
         # iterate over question in correct_answers
+        for question in correct_answers:
             # concatenate "{question} >>> {correct_answers[question]}\n" to correct_answers_text
+            correct_answers_text += "\n"
+            correct_answers_text += f"{question} >>> {correct_answers[question]}"
         # create correct_answers_label with text=correct_answers_text
+        correct_answers_label = tk.Label(end_frame, text=correct_answers_text, font=("Arial", 13))
         # pack correct_answers_label to end_frame
+        correct_answers_label.pack(padx=10, pady=10)
 
     # create exit_button with command=root.destroy()
     # pack exit_button to root in lower left corner
