@@ -402,7 +402,11 @@ def end_screen(topic, root, score, settings, num_questions):
         correct_answers_label.pack(padx=5, pady=5)
 
     # create exit_button with command=root.destroy()
+    exit_button = tk.Button(root, text="Press to exit\nquiz player", font=("Arial", 10))
+    exit_button.config(highlightthickness=5, highlightbackground="black", highlightcolor="black")
+    exit_button.config(command=root.destroy)
     # pack exit_button to root in lower left corner
+    exit_button.place(relx=0.95, rely=0.95, anchor="se")
 
 # define main function
 def main():
