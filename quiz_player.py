@@ -216,6 +216,26 @@ def store_questions(file, should_show_right_answer):
     return shuffled_questions
 
 # define check_correct_answer function
+def check_correct_answer(root, settings, selected, correct_answer, check_answer_label):
+    print("checking correct answer...")
+    # declare score, question_index, tries as global
+
+    # check if selected == correct_answer:
+        # add 1 to score
+        #config check_answer_label with text=Correct
+        # add 1 to question_index
+        # call question_screen with a delay
+    # else
+        # decrement tries by 1
+        # check if tries > 0
+            # config check_answer_label with text=Wrong + tries
+        # else:
+            # message = Wrong
+            # if settings[show_correct_each_question]
+                # add "Correct answer if {correct_answer}" to message
+            # config check_answer_label with text=message
+            # add 1 to question_index
+            # call question_screen with delay
 
 # define main_screen with root, question_index, questions_list, questions, topic, score
 def main_screen(root, settings, question_index, questions_list, questions, topic, score):
@@ -301,24 +321,28 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     # create button_A with text=choices[0], command=check_correct_answer
     button_A = tk.Button(buttons_frame, text=choices[0], font=("Arial", 11))
     button_A.config(width=20, height=3, wraplength=170)
+    button_A.config(command=lambda selected=choices[0]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
     # grid place button_A to buttons_frame
     button_A.grid(row=0, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_B with text=choices[1], command=check_correct_answer
     button_B = tk.Button(buttons_frame, text=choices[1], font=("Arial", 11))
     button_B.config(width=20, height=3, wraplength=170)
+    button_B.config(command=lambda selected=choices[1]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
     # grid place button_B to buttons_frame
     button_B.grid(row=0, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_C with text=choices[2], command=check_correct_answer
     button_C = tk.Button(buttons_frame, text=choices[2], font=("Arial", 11))
     button_C.config(width=20, height=3, wraplength=170)
+    button_C.config(command=lambda selected=choices[2]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
     # grid place button_C to buttons_frame
     button_C.grid(row=1, column=0, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
     # create button_D with text=choices[3], command=check_correct_answer
     button_D = tk.Button(buttons_frame, text=choices[3], font=("Arial", 11))
     button_D.config(width=20, height=3, wraplength=170)
+    button_D.config(command=lambda selected=choices[3]: check_correct_answer(root, settings, selected, correct_answer, check_answer_label))
     # grid place button_D to buttons_frame
     button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
