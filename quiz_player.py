@@ -240,7 +240,9 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     topic_label.place(relx=0.5, rely=0.075, anchor="center")
 
     # create check_answer_label with no text
+    check_answer_label = tk.Label(root, text="", font=("Arial", 12))
     # place check_answer_label to root
+    check_answer_label.place(relx=0.5, rely=0.935, anchor="center")
 
     # check if settings[show_score_every_question]
         # create score_label
