@@ -221,6 +221,8 @@ def store_questions(file, should_show_right_answer):
 # define show_correct_answer_screen
 
 # define main_screen
+def main_screen(question, answer, num_try, score, should_show_score):
+    print("function called")
     # create main_screen_frame
     # place main_screen_frame to root 
 
@@ -315,15 +317,16 @@ Input: """
     # set end_screen as tkframe
     end_screen = tk.Frame()
 
+    # define empty score
+    score = 0
     # iterate over the keys in questions dictionary (this will be made in store_questions function)
     for question in questions:
-        print(f"{question}: {questions[question]}")
         # assign tries = settings[tries]
         tries = settings["tries"]
         # iterate over number of tries
-        for num_try in range(1, tries+1):
-            print(num_try)
-            # call main_screen(questions[question], tries, score, settings["show_score_every_question"])
+        for num_try in range(tries, 0, -1):
+            # call main_screen(question, questions[question], tries, score, settings["show_score_every_question"])
+            main_screen(question, questions[question], num_try, score, settings["show_correct_answer_each_question"])
             # check if is_answer_correct (will be made in check_correct_answer function)
                 # score += 1
                 # break
