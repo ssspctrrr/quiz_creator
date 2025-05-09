@@ -245,8 +245,11 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     check_answer_label.place(relx=0.5, rely=0.935, anchor="center")
 
     # check if settings[show_score_every_question]
+    if settings["show_score_every_question"]:
         # create score_label
+        score_label = tk.Label(root, text=f"Score: {score}", font=("Arial", 12))
         # place score_label to root
+        score_label.place(relx=0.965, rely=0.965, anchor="se")
 
     # create question_screen frame
     # place question_screen to root
