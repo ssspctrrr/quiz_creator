@@ -371,9 +371,10 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
 
 # define end_screen function
 def end_screen(topic, root, score, settings):
-    pass
     # create end_label
+    end_label = tk.Label(root, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20))
     # pack end_label to root
+    end_label.pack()
 
     # check if settings[show_score_end]
         # create score_label with text="Score: {score}/{len(correct_answer)}"
