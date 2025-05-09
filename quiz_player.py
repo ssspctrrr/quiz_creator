@@ -226,9 +226,13 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     if question_index == len(questions_list):
         print("no more questions")
         # destroy all current widgets in root
+        for widget in root.winfo_children():
+            widget.destroy()
         # call end_screen()
     
     # destroy all current widgets in root
+    for widget in root.winfo_children():
+        widget.destroy()
 
     # create topic_label
     # place topic_label to root
