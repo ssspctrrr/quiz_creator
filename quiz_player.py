@@ -221,10 +221,11 @@ def store_questions(file, should_show_right_answer):
 # define show_correct_answer_screen
 
 # define main_screen
-def main_screen(question, answer, num_try, score, should_show_score):
-    print("function called")
+def main_screen(root, question, answer, num_try, score, should_show_score):
     # create main_screen_frame
-    # place main_screen_frame to root 
+    main_screen_frame = tk.Frame(root)
+    # place main_screen_frame to root
+    main_screen_frame.pack()
 
     # create quiz_topic_label
     # place quiz_topic_label to main_screen_frame
@@ -237,12 +238,14 @@ def main_screen(question, answer, num_try, score, should_show_score):
         # place to main_screen_frame
 
     # create questions_frame
+    questions_frame = tk.Frame(main_screen_frame)
     # place questions_frame to main_screen_frame
 
     # create question_label
     # pack question_label to questions_frame
 
     # create buttons_frame
+    buttons_frame = tk.Frame(questions_frame)
     # pack buttons_frame to question_label
     
     # create button_A
@@ -309,6 +312,7 @@ Input: """
 
     # set up root window
     root = tk.Tk()
+    root.geometry("667x500")
 
     # set question_screen as tkframe
     question_screen = tk.Frame()
@@ -326,7 +330,7 @@ Input: """
         # iterate over number of tries
         for num_try in range(tries, 0, -1):
             # call main_screen(question, questions[question], tries, score, settings["show_score_every_question"])
-            main_screen(question, questions[question], num_try, score, settings["show_correct_answer_each_question"])
+            main_screen(root, question, questions[question], num_try, score, settings["show_correct_answer_each_question"])
             # check if is_answer_correct (will be made in check_correct_answer function)
                 # score += 1
                 # break
