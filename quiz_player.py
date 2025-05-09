@@ -376,16 +376,16 @@ def end_screen(topic, root, score, settings, num_questions):
     end_frame.place(relx=0.5, rely=0.5, anchor="center")
 
     # create end_label
-    end_label = tk.Label(end_frame, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20))
+    end_label = tk.Label(end_frame, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20), wraplength=500)
     # pack end_label to end_frame
-    end_label.pack(padx=10, pady=10)
+    end_label.pack(padx=5, pady=5)
 
     # check if settings[show_score_end]
     if settings["show_score_end"]:
         # create score_label with text="Score: {score}/{len(correct_answer)}"
         score_label = tk.Label(end_frame, text=f"Score: {score}/{num_questions}", font=("Times New Roman", 15))
         # pack score_label to end_frame
-        score_label.pack(padx=10, pady=10)
+        score_label.pack(padx=5, pady=5)
 
     # check if settings[show_correct_answer_at_end]
     if settings["show_correct_answer_at_end"]:
@@ -394,12 +394,12 @@ def end_screen(topic, root, score, settings, num_questions):
         # iterate over question in correct_answers
         for question in correct_answers:
             # concatenate "{question} >>> {correct_answers[question]}\n" to correct_answers_text
-            correct_answers_text += "\n"
-            correct_answers_text += f"{question} >>> {correct_answers[question]}"
+            correct_answers_text += f"{question} >>> {correct_answers[question]}\n"
         # create correct_answers_label with text=correct_answers_text
-        correct_answers_label = tk.Label(end_frame, text=correct_answers_text, font=("Arial", 13))
+        correct_answers_label = tk.Label(end_frame, text=f"Correct Answers:\n{correct_answers_text}".strip())
+        correct_answers_label.config(font=("Arial", 13), wraplength=500, justify="left")
         # pack correct_answers_label to end_frame
-        correct_answers_label.pack(padx=10, pady=10)
+        correct_answers_label.pack(padx=5, pady=5)
 
     # create exit_button with command=root.destroy()
     # pack exit_button to root in lower left corner
