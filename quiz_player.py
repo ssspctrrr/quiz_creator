@@ -235,9 +235,15 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
     else:
         print("answer is incorrect")
         # decrement tries by 1
+        tries -= 1
+        print(tries)
         # check if tries > 0
+        if tries > 0:
             # config check_answer_label with text=Wrong + tries
+            check_answer_label.config(text=f"Wrong Answer! {tries} left.", fg="red")
         # else:
+        else:
+            print("no more tries")
             # message = Wrong
             # if settings[show_correct_each_question]
                 # add "Correct answer if {correct_answer}" to message
@@ -274,7 +280,7 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     check_answer_label.place(relx=0.5, rely=0.935, anchor="center")
 
     # create tries_label
-    tries_label = tk.Label(root, text=f"Tries Left: {tries}", font=("Arial", "12"))
+    tries_label = tk.Label(root, text=f"Total tries: {tries}", font=("Arial", "12"))
     # place tries_label to root
     tries_label.place(relx=0.035, rely=0.965, anchor="sw")
 
