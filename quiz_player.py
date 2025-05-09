@@ -217,9 +217,61 @@ def store_questions(file, should_show_right_answer):
 
 # define check_correct_answer function
 
-# define main_screen
+# define main_screen with root, questions, questions_list, topic, settings, 
 def main_screen(root):
-    print("function called")
+    pass
+    # define tries_left as settings[tries]
+
+    # check if current_index == len(questions_list)
+        # destroy all current widgets in root
+        # call end_screen()
+    
+    # destroy all current widgets in root
+
+    # create topic_label
+    # place topic_label to root
+
+    # create check_answer_label with no text
+    # place check_answer_label to root
+
+    # check if settings[show_score_every_question]
+        # create score_label
+        # place score_label to root
+
+    # create question_screen frame
+    # place question_screen to root
+
+    # assign question = questions_list[question_index]
+    # define choice_letter as [A,B,C,D]
+    # define empty choices array
+
+    # iterate over choice in questions[question]
+        # check if choice startswith ">>>"
+            # assign choice = choice.removeprefix(>>>)
+            # assign choice = choice_letter[0] + choice
+            # assign correct_answer = choice
+        # else
+            # assign choice = choice_letter[0] + choice
+        # append choice to choices
+        # pop choice_letter[0]
+
+    # create question_label
+    # pack question_label to question_screen
+
+    # create buttons_frame
+    # pack buttons_frame to question_screen
+
+    # create button_A with text=choices[0], command=check_correct_answer
+    # grid place button_A to buttons_frame
+
+    # create button_B with text=choices[1], command=check_correct_answer
+    # grid place button_B to buttons_frame
+
+    # create button_C with text=choices[2], command=check_correct_answer
+    # grid place button_C to buttons_frame
+
+    # create button_D with text=choices[3], command=check_correct_answer
+    # grid place button_D to buttons_frame
 
 # define end_screen function
 
