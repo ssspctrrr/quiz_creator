@@ -259,17 +259,30 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     # assign question = questions_list[question_index]
     question = questions_list[question_index]
     # define choice_letter as [A,B,C,D]
+    choice_letter = ["A. ", "B. ", "C. ", "D. "]
     # define empty choices array
+    choices = []
 
     # iterate over choice in questions[question]
+    for choice in questions[question]:
         # check if choice startswith ">>>"
+        if choice.startswith(">>>"):
             # assign choice = choice.removeprefix(>>>)
+            choice = choice.removeprefix(">>>")
             # assign choice = choice_letter[0] + choice
+            choice = choice_letter[0] + choice
             # assign correct_answer = choice
+            correct_answer = choice
         # else
+        else:
             # assign choice = choice_letter[0] + choice
+            choice = choice_letter[0] + choice
         # append choice to choices
+        choices.append(choice)
         # pop choice_letter[0]
+        choice_letter.pop(0)
+
+    print(choices)
 
     # create question_label
     question_label = tk.Label(question_screen, text=question, font=("Arial", 11), bg="pink")
