@@ -370,21 +370,26 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
 
 # define end_screen function
 def end_screen(topic, root, score, settings):
+    # create end_frame
+    end_frame= tk.Label(root)
+    # place end_frame to root
+    end_frame.place(relx=0.5, rely=0.5, anchor="center")
+
     # create end_label
-    end_label = tk.Label(root, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20))
-    # pack end_label to root
-    end_label.pack(expand=True)
+    end_label = tk.Label(end_frame, text=f"{topic} Quiz\nFinished!", font=("Times New Roman", 20))
+    # pack end_label to end_frame
+    end_label.pack(padx=10, pady=10)
 
     # check if settings[show_score_end]
         # create score_label with text="Score: {score}/{len(correct_answer)}"
-        # pack score_label to root
+        # pack score_label to end_frame
 
     # check if settings[show_correct_answer_at_end]
         # define correct_answers_text
         # iterate over question in correct_answers
             # concatenate "{question} >>> {correct_answers[question]}\n" to correct_answers_text
         # create correct_answers_label with text=correct_answers_text
-        # pack correct_answers_label to root
+        # pack correct_answers_label to end_frame
 
     # create exit_button with command=root.destroy()
     # pack exit_button to root in lower left corner
