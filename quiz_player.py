@@ -267,7 +267,7 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         for widget in root.winfo_children():
             widget.destroy()
         # call end_screen()
-        end_screen()
+        end_screen(topic, root, score, settings)
     
     # destroy all current widgets in root
     for widget in root.winfo_children():
@@ -370,8 +370,24 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
 # define end_screen function
-def end_screen():
-    print(correct_answers)
+def end_screen(topic, root, score, settings):
+    pass
+    # create end_label
+    # pack end_label to root
+
+    # check if settings[show_score_end]
+        # create score_label with text="Score: {score}/{len(correct_answer)}"
+        # pack score_label to root
+
+    # check if settings[show_correct_answer_at_end]
+        # define correct_answers_text
+        # iterate over question in correct_answers
+            # concatenate "{question} >>> {correct_answers[question]}\n" to correct_answers_text
+        # create correct_answers_label with text=correct_answers_text
+        # pack correct_answers_label to root
+
+    # create exit_button with command=root.destroy()
+    # pack exit_button to root in lower left corner
 
 # define main function
 def main():
