@@ -218,49 +218,9 @@ def store_questions(file, should_show_right_answer):
 
 # define check_correct_answer function
 
-# define show_correct_answer_screen
-
 # define main_screen
-def main_screen(root, question, answer, num_try, score, should_show_score):
-    # create main_screen_frame
-    main_screen_frame = tk.Frame(root)
-    # place main_screen_frame to root
-    main_screen_frame.pack()
 
-    # create quiz_topic_label
-    # place quiz_topic_label to main_screen_frame
-
-    # create tries_label
-    # place tries_label to main_screen_frame
-
-    # check if should_show_score
-        # create score_label
-        # place to main_screen_frame
-
-    # create questions_frame
-    questions_frame = tk.Frame(main_screen_frame)
-    # place questions_frame to main_screen_frame
-
-    # create question_label
-    # pack question_label to questions_frame
-
-    # create buttons_frame
-    buttons_frame = tk.Frame(questions_frame)
-    # pack buttons_frame to question_label
-    
-    # create button_A
-    # grid place button_A to buttons_frame
-
-    # create button_B
-    # grid place button_B to buttons_frame
-
-    # create button_C
-    # grid place button_C to buttons_frame
-
-    # create button_D
-    # grid place button_D to buttons_frame
-
-# define show_correct_answer_screen function
+# define end_screen function
 
 # define main function
 def main():
@@ -314,34 +274,13 @@ Input: """
     root = tk.Tk()
     root.geometry("667x500")
 
-    # set question_screen as tkframe
-    question_screen = tk.Frame()
-    # set show_correct_answer_screen as tkframe
-    show_correct_answer_screen = tk.Frame()
-    # set end_screen as tkframe
-    end_screen = tk.Frame()
-
     # define empty score
     score = 0
-    # iterate over the keys in questions dictionary (this will be made in store_questions function)
-    for question in questions:
-        # assign tries = settings[tries]
-        tries = settings["tries"]
-        # iterate over number of tries
-        for num_try in range(tries, 0, -1):
-            # call main_screen(question, questions[question], tries, score, settings["show_score_every_question"])
-            main_screen(root, question, questions[question], num_try, score, settings["show_correct_answer_each_question"])
-            # check if is_answer_correct (will be made in check_correct_answer function)
-                # score += 1
-                # break
-            # tries += 1
-        # check if settings[show_correct_answer_each_question]
-            # call show_correct_answer_screen function
+    # define questions_list
 
-    # check if settings[show_score_end]
-        # put score as tk.label on end screen
-    # check if correct_answers (this dictionary will be made in store_questions function)
-        # put correct_answers as tk.label on end screen
+    # define question_index
+
+    # call main_screen
 
     # run tk.mainloop()
     tk.mainloop()
