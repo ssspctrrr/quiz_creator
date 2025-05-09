@@ -217,12 +217,14 @@ def store_questions(file, should_show_right_answer):
 
 # define check_correct_answer function
 
-# define main_screen with root, questions, questions_list, topic, settings, 
-def main_screen(root):
-    pass
+# define main_screen with root, question_index, questions_list, questions, topic, score
+def main_screen(root, settings, question_index, questions_list, questions, topic, score):
     # define tries_left as settings[tries]
+    tries = settings[tries]
 
     # check if current_index == len(questions_list)
+    if question_index == len(questions_list):
+        print("no more questions")
         # destroy all current widgets in root
         # call end_screen()
     
@@ -340,7 +342,7 @@ Input: """
     question_index = 0
 
     # call main_screen
-    main_screen(root)
+    main_screen(root, settings, question_index, questions_list, questions, topic, score)
 
     # run tk.mainloop()
     tk.mainloop()
