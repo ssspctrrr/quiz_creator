@@ -217,15 +217,19 @@ def store_questions(file, should_show_right_answer):
 
 # define check_correct_answer function
 def check_correct_answer(root, settings, selected, correct_answer, check_answer_label):
-    print("checking correct answer...")
     # declare score, question_index, tries as global
+    global score, question_index, tries
 
     # check if selected == correct_answer:
+    if selected == correct_answer:
+        print("answer is correct")
         # add 1 to score
         #config check_answer_label with text=Correct
         # add 1 to question_index
         # call question_screen with a delay
     # else
+    else:
+        print("answer is incorrect")
         # decrement tries by 1
         # check if tries > 0
             # config check_answer_label with text=Wrong + tries
@@ -240,6 +244,7 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
 # define main_screen with root, question_index, questions_list, questions, topic, score
 def main_screen(root, settings, question_index, questions_list, questions, topic, score):
     # define tries_left as settings[tries]
+    global tries
     tries = settings["tries"]
 
     # check if current_index == len(questions_list)
