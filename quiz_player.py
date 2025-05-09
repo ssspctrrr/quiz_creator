@@ -265,7 +265,7 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         for widget in root.winfo_children():
             widget.destroy()
         # call end_screen()
-        root.after(0, lambda: end_screen(topic, root, score, settings))
+        root.after(0, lambda: end_screen(topic, root, score, settings, len(questions_list)))
         return
     
     # destroy all current widgets in root
@@ -369,7 +369,7 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
     button_D.grid(row=1, column=1, padx=5, pady=5, ipadx=5, ipady=5, sticky="nsew")
 
 # define end_screen function
-def end_screen(topic, root, score, settings):
+def end_screen(topic, root, score, settings, num_questions):
     # create end_frame
     end_frame= tk.Label(root)
     # place end_frame to root
@@ -381,8 +381,11 @@ def end_screen(topic, root, score, settings):
     end_label.pack(padx=10, pady=10)
 
     # check if settings[show_score_end]
+    if settings["show_score_end"]:
         # create score_label with text="Score: {score}/{len(correct_answer)}"
+        score_label = tk.Label(end_frame, text=f"Score: {score}/{num_questions}", font=("Times New Roman", 15))
         # pack score_label to end_frame
+        score_label.pack(padx=10, pady=10)
 
     # check if settings[show_correct_answer_at_end]
         # define correct_answers_text
