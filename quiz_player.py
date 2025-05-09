@@ -245,11 +245,17 @@ def check_correct_answer(root, settings, selected, correct_answer, check_answer_
         else:
             print("no more tries")
             # message = Wrong
+            message = "Wrong!"
             # if settings[show_correct_each_question]
+            if settings["show_correct_answer_each_question"]:
                 # add "Correct answer if {correct_answer}" to message
+                message += f" Correct answer is {correct_answer}"
             # config check_answer_label with text=message
+            check_answer_label.config(text=message, fg="red")
             # add 1 to question_index
+            question_index += 1
             # call question_screen with delay
+            root.after(1500, lambda: main_screen(root, settings, question_index, questions_list, questions, topic, score))
 
 # define main_screen with root, question_index, questions_list, questions, topic, score
 def main_screen(root, settings, question_index, questions_list, questions, topic, score):
