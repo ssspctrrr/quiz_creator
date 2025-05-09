@@ -252,9 +252,12 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         score_label.place(relx=0.965, rely=0.965, anchor="se")
 
     # create question_screen frame
+    question_screen = tk.Frame(root, bg="pink")
     # place question_screen to root
+    question_screen.place(relx=0.5, rely=0.5, anchor="center")
 
     # assign question = questions_list[question_index]
+    question = questions_list[question_index]
     # define choice_letter as [A,B,C,D]
     # define empty choices array
 
@@ -269,7 +272,10 @@ def main_screen(root, settings, question_index, questions_list, questions, topic
         # pop choice_letter[0]
 
     # create question_label
+    question_label = tk.Label(question_screen, text=question, font=("Arial", 11), bg="pink")
+    question_label.config(width=40, height=3)
     # pack question_label to question_screen
+    question_label.pack(ipadx=5, ipady=5, padx=5, pady=5)
 
     # create buttons_frame
     # pack buttons_frame to question_screen
