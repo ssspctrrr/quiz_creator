@@ -81,7 +81,6 @@ Input: """
         if setting_to_change == "q":
             # print "the current settings will now apply and you will now proceed to the quiz."
             print("\nThe current settings will now apply and you will now proceed to the quiz")
-            print("Happy Quiztaking!!!")
             # break loop
             break
 
@@ -270,7 +269,11 @@ Input: """
 
         # call store_questions function
         questions = store_questions(file, settings["show_correct_answer_at_end"])
-        print(questions)
+
+        # print quiz message
+        print("\nYou will now answer the Quiz.")
+        print("Note: It is recommended to answer/play the quiz in its default or full-screen size.")
+        print("Happy Quiztaking :) !!!")
 
     # set up root window
     root = tk.Tk()
